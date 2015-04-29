@@ -1,0 +1,10 @@
+﻿<Application x:Class="Anim.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="go" UriSource="img/go.png"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
