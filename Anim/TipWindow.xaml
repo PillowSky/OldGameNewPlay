@@ -3,16 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="TipWindow" Height="520" Width="400">
     <Grid>
-        <Rectangle Fill="#FF359EBD" HorizontalAlignment="Left" Height="520" VerticalAlignment="Top" Width="400"/>
-        <Image HorizontalAlignment="Left" Height="121" Margin="34,70,0,0" VerticalAlignment="Top" Width="130" Source="pack://application:,,/right-hand.png"/>
-        <Label Content="假设你习惯右手操作" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="64,10,0,0" VerticalAlignment="Top" Height="55" Width="329" FontSize="20" Foreground="White"/>
-        <Label Content="挥动右手&#xD;&#xA;光标便会相应运动&#xD;&#xA;可以控制小鱼的运动&#xD;&#xA;现在就来试试&#xD;&#xA;" HorizontalAlignment="Left" Margin="194,73,0,0" VerticalAlignment="Top" Height="118" Width="206" FontSize="20" Foreground="White"/>
-        <Image HorizontalAlignment="Left" Height="121" Margin="34,278,0,0" VerticalAlignment="Top" Width="130" Source="left-hand.png" RenderTransformOrigin="0.408,-0.041"/>
-        <Label Content="拍击左手&#xD;&#xA;相当于点击鼠标左键&#xA;小鱼便会加速&#xA;" HorizontalAlignment="Left" Margin="194,281,0,0" VerticalAlignment="Top" Height="118" Width="206" FontSize="20" Foreground="White"/>
+        <Rectangle Fill="#FF359EBD" HorizontalAlignment="Left" Height="490" VerticalAlignment="Top" Width="392"/>
+        <Image HorizontalAlignment="Left" Height="121" Margin="25,73,0,0" VerticalAlignment="Top" Width="130" Source="pack://application:,,/right-hand.png"/>
+        <Label Content="假设你习惯右手操作" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Height="43" Width="372" FontSize="20" Foreground="White"/>
+        <Label Content="挥动右手&#xA;光标便会相应运动&#xA;可以控制小鱼的运动&#xA;现在挥手试试!&#xA;" HorizontalAlignment="Left" Margin="169,73,0,0" VerticalAlignment="Top" Height="121" Width="196" FontSize="20" Foreground="White"/>
+        <Image HorizontalAlignment="Left" Height="121" Margin="25,257,0,0" VerticalAlignment="Top" Width="130" Source="left-hand.png" RenderTransformOrigin="0.408,-0.041"/>
+        <Label Content="拍击左手&#xA;相当于点击鼠标左键&#xA;小鱼便会加速&#xD;&#xA;拍拍手，关掉这个窗口&#xA;" HorizontalAlignment="Left" Margin="169,257,0,0" VerticalAlignment="Top" Height="149" Width="216" FontSize="20" Foreground="White"/>
 
-        <Grid Height="538" VerticalAlignment="Top" Margin="0,-18,0,0">
-            <Rectangle Fill="#FF35BDB2" HorizontalAlignment="Left" Height="63" Margin="0,485,0,0" VerticalAlignment="Top" Width="480"/>
-            <Label Content="Enough, 就是这么简单" HorizontalAlignment="Left" Margin="91,491,0,0" VerticalAlignment="Top"  FontSize="20" Foreground="White"/>
+        <Grid Cursor="Hand" Height="508" VerticalAlignment="Top" Margin="0,-18,0,0"  MouseDown="onBackButtonClick">
+            <Rectangle HorizontalAlignment="Left" Margin="0,444,0,0" Width="392">
+                <Rectangle.Fill>
+                    <SolidColorBrush x:Name="BackBrush" Color="#FF35BDB2" />
+                </Rectangle.Fill>
+            </Rectangle>
+            <Label Content="就是这么简单" HorizontalAlignment="Left" Margin="128,454,0,0" VerticalAlignment="Top"  FontSize="20" Foreground="White"/>
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="Grid.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="BackBrush" Storyboard.TargetProperty="Color" To="#FF0074A2" Duration="0:0:0.3" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Grid.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="BackBrush" Storyboard.TargetProperty="Color" To="#FF20AF74" Duration="0:0:0.3" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Grid.Triggers>
         </Grid>
     </Grid>
 </Window>

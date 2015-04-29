@@ -20,5 +20,9 @@ namespace Anim {
         public TipWindow() {
             InitializeComponent();
         }
+
+        private void onBackButtonClick(object sender, MouseButtonEventArgs e) {
+            this.Close();
+        }
     }
 }

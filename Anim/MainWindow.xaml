@@ -9,8 +9,8 @@
                 <EventTrigger RoutedEvent="Label.Loaded">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="LogoLabel" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:1" />
-                            <ThicknessAnimation Storyboard.TargetName="LogoLabel" Storyboard.TargetProperty="Margin" From="-10,0,0,0" To="10,0,0,0" Duration="0:0:1" />
+                            <DoubleAnimation Storyboard.TargetName="LogoLabel" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5" />
+                            <ThicknessAnimation Storyboard.TargetName="LogoLabel" Storyboard.TargetProperty="Margin" From="-20,0,0,0" To="20,0,0,0" Duration="0:0:0.5" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
