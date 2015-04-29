@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Anim.TipWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="TipWindow" Height="520" Width="400" WindowStyle="None" AllowsTransparency="True">
+        Title="TipWindow" Height="520" Width="400">
     <Grid>
         <Rectangle Fill="#FF359EBD" HorizontalAlignment="Left" Height="520" VerticalAlignment="Top" Width="400"/>
         <Image HorizontalAlignment="Left" Height="121" Margin="34,70,0,0" VerticalAlignment="Top" Width="130" Source="pack://application:,,/right-hand.png"/>
