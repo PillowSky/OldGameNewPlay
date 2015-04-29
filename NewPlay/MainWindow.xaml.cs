@@ -26,8 +26,11 @@ namespace NewPlay {
         const int GAME_HEIGHT = 600;
         const int CLICK_THRESHOLD = 2000;
 
-        private KinectSensor sensor;
         private bool gaming = false;
+        private bool lefty = false;
+
+        private KinectSensor sensor;
+
         private int lastX = 0;
         private int lastY = 0;
 
@@ -65,6 +68,14 @@ namespace NewPlay {
             }
         }
 
+        private void onLeftHandChecked(object sender, RoutedEventArgs e) {
+            lefty = true;
+        }
+
+        private void onRightHandChecked(object sender, RoutedEventArgs e) {
+            lefty = false;
+        }
+
         private void onColorFrameReady(object sender, ColorImageFrameReadyEventArgs e) {
             using (var colorFrame = e.OpenColorImageFrame()) {
                 if (colorFrame != null) {
@@ -94,20 +105,34 @@ namespace NewPlay {
             int leftX = (int)(skeleton.Joints[JointType.HandLeft].Position.X * GAME_WIDTH + GAME_WIDTH);
             int leftY = (int)(skeleton.Joints[JointType.HandLeft].Position.Y * -GAME_HEIGHT + GAME_HEIGHT / 2);
 
-            saturate(rightX, 0, GAME_WIDTH);
-            saturate(rightY, 0, GAME_HEIGHT);
-            saturate(leftX, 0, GAME_WIDTH);
-            saturate(leftY, 0, GAME_HEIGHT);
+            rightX = saturate(rightX, 0, GAME_WIDTH);
+            rightY = saturate(rightY, 0, GAME_HEIGHT);
+            leftX = saturate(leftX, 0, GAME_WIDTH);
+            leftY = saturate(leftY, 0, GAME_HEIGHT);
 
-            SetCursorPos(rightX, rightY);
+            int masterX, masterY, slaveX, slaveY;
 
-            double dis = Math.Pow(leftX - lastX, 2) + Math.Pow(leftY - lastY, 2);
-            if (dis > CLICK_THRESHOLD) {
-                mouse_event(MOUSEEVENTF_LEFTDOWN + MOUSEEVENTF_ABSOLUTE, rightX, rightY, 0, 0);
-                mouse_event(MOUSEEVENTF_LEFTUP, rightX, rightY, 0, 0);
+            if (lefty) {
+                masterX = leftX;
+                masterY = leftY;
+                slaveX = rightX;
+                slaveY = rightY;
+            } else {
+                masterX = rightX;
+                masterY = rightY;
+                slaveX = leftX;
+                slaveY = leftY;
             }
-            lastX = leftX;
-            lastY = leftY;
+
+            SetCursorPos(masterX, masterY);
+
+            double dis = Math.Pow(slaveX - lastX, 2) + Math.Pow(slaveY - lastY, 2);
+            if (dis > CLICK_THRESHOLD) {
+                mouse_event(MOUSEEVENTF_LEFTDOWN + MOUSEEVENTF_ABSOLUTE, masterX, masterY, 0, 0);
+                mouse_event(MOUSEEVENTF_LEFTUP, masterX, masterY, 0, 0);
+            }
+            lastX = slaveX;
+            lastY = slaveY;
         }
 
         private int saturate(int num, int min, int max) {

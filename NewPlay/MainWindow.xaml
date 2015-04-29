@@ -60,9 +60,8 @@
                     </EventTrigger>
                 </Grid.Triggers>
             </Grid>
-            <RadioButton GroupName="primaryHand" Content="我是左撇子" HorizontalAlignment="Left" Margin="10,358,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="153" Height="45"/>
-            <RadioButton GroupName="primaryHand" Content="我是右撇子" HorizontalAlignment="Right" Margin="0,358,44,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="137" Height="45"/>
-
+            <RadioButton GroupName="primaryHand" Content="我是左撇子" HorizontalAlignment="Left" Margin="10,358,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="153" Height="45" Checked="onLeftHandChecked"/>
+            <RadioButton GroupName="primaryHand" Content="我是右撇子" HorizontalAlignment="Right" Margin="0,358,44,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="137" Height="45" Checked="onRightHandChecked" IsChecked="True"/>
         </Grid>
 
     </Grid>
