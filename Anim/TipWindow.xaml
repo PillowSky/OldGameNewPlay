@@ -5,7 +5,7 @@
     <Grid>
         <Rectangle Fill="#FF359EBD" HorizontalAlignment="Left" Height="490" VerticalAlignment="Top" Width="392"/>
         <Image HorizontalAlignment="Left" Height="121" Margin="25,73,0,0" VerticalAlignment="Top" Width="130" Source="pack://application:,,/right-hand.png"/>
-        <Label Content="假设你习惯右手操作" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Height="43" Width="372" FontSize="20" Foreground="White"/>
+        <Label Content="如果你习惯右手操作" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Height="43" Width="372" FontSize="20" Foreground="White"/>
         <Label Content="挥动右手&#xA;光标便会相应运动&#xA;可以控制小鱼的运动&#xA;现在挥手试试!&#xA;" HorizontalAlignment="Left" Margin="169,73,0,0" VerticalAlignment="Top" Height="121" Width="196" FontSize="20" Foreground="White"/>
         <Image HorizontalAlignment="Left" Height="121" Margin="25,257,0,0" VerticalAlignment="Top" Width="130" Source="left-hand.png" RenderTransformOrigin="0.408,-0.041"/>
         <Label Content="拍击左手&#xA;相当于点击鼠标左键&#xA;小鱼便会加速&#xD;&#xA;拍拍手，关掉这个窗口&#xA;" HorizontalAlignment="Left" Margin="169,257,0,0" VerticalAlignment="Top" Height="149" Width="216" FontSize="20" Foreground="White"/>
