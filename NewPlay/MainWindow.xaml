@@ -4,16 +4,16 @@
         Title="NewPlay" Height="480" Width="854" Loaded="onLoad">
     <Grid HorizontalAlignment="Left" Height="480" Width="854" Margin="0,0,0,0" VerticalAlignment="Top">
         <Rectangle Fill="#FF35BDB2" HorizontalAlignment="Left" Height="450" Margin="0,0,0,0" VerticalAlignment="Top" Width="846"/>
-        <Label Name="LogoLabel" Content="Old Game New Play" HorizontalAlignment="Left" VerticalAlignment="Top" Height="79" Width="505" Foreground="White" FontSize="48" Margin="20,0,0,0"/>
+        <Label Name="LogoLabel" Content="Old Game New Play" HorizontalAlignment="Center" VerticalAlignment="Top" Height="79" Width="505" Foreground="White" FontSize="48" Margin="20,0,0,0"/>
         <Grid HorizontalAlignment="Left" Height="400" Margin="20,0,0,50" VerticalAlignment="Bottom" Width="400">
-            <Image Name="camera" Source="pack://application:,,/img/KinectRequired.png" Margin="10,10,-10,-10"/>
+            <Image Name="camera" Source="pack://application:,,/img/KinectRequired.png" Margin="10,0,-10,-10"/>
             <Canvas Name="canvas"/>
         </Grid>
         <Grid Margin="0,10,10,30" HorizontalAlignment="Right" Width="349">
             <Grid Cursor="Hand" Width="300" Height="100" Margin="0,71,44,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseDown="onTipButtonClick">
                 <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="100">
                     <Rectangle.Fill>
-                        <SolidColorBrush x:Name="TipBrush" Color="#FF20AF74" />
+                        <SolidColorBrush x:Name="TipBrush" Color="#FF510E78" />
                     </Rectangle.Fill>
                 </Rectangle>
                 <Label Content="快速指南" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontSize="36" Margin="37,21,111,21" Width="152"/>
@@ -29,7 +29,7 @@
                     <EventTrigger RoutedEvent="Grid.MouseLeave">
                         <BeginStoryboard>
                             <Storyboard>
-                                <ColorAnimation Storyboard.TargetName="TipBrush" Storyboard.TargetProperty="Color" To="#FF20AF74" Duration="0:0:0.3" />
+                                <ColorAnimation Storyboard.TargetName="TipBrush" Storyboard.TargetProperty="Color" To="#FF510E78" Duration="0:0:0.3" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
@@ -38,7 +38,7 @@
             <Grid Cursor="Hand"  Width="300" Height="100" Margin="0,224,44,0" VerticalAlignment="Top" HorizontalAlignment="Right" MouseDown="onGoButtonClick">
                 <Rectangle HorizontalAlignment="Center" VerticalAlignment="Center" Width="300" Height="100">
                     <Rectangle.Fill>
-                        <SolidColorBrush x:Name="GoBrush" Color="#FF20AF74" />
+                        <SolidColorBrush x:Name="GoBrush" Color="#FF510E78" />
                     </Rectangle.Fill>
                 </Rectangle>
                 <Label Content="开始游戏" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" Foreground="White" FontSize="36" Margin="37,21,111,21" Width="152"/>
@@ -54,14 +54,14 @@
                     <EventTrigger RoutedEvent="Grid.MouseLeave">
                         <BeginStoryboard>
                             <Storyboard>
-                                <ColorAnimation Storyboard.TargetName="GoBrush" Storyboard.TargetProperty="Color" To="#FF20AF74" Duration="0:0:0.3" />
+                                <ColorAnimation Storyboard.TargetName="GoBrush" Storyboard.TargetProperty="Color" To="#FF510E78" Duration="0:0:0.3" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
                 </Grid.Triggers>
             </Grid>
-            <RadioButton GroupName="primaryHand" Content="惯用左手" HorizontalAlignment="Left" Margin="10,358,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="120" Height="45"/>
-            <RadioButton GroupName="primaryHand" Content="惯用右手" HorizontalAlignment="Right" Margin="0,358,44,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="120" Height="45"/>
+            <RadioButton GroupName="primaryHand" Content="我是左撇子" HorizontalAlignment="Left" Margin="10,358,0,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="153" Height="45"/>
+            <RadioButton GroupName="primaryHand" Content="我是右撇子" HorizontalAlignment="Right" Margin="0,358,44,0" VerticalAlignment="Top" Foreground="White" FontSize="24" Width="137" Height="45"/>
 
         </Grid>
 
