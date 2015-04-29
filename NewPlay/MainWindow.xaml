@@ -4,20 +4,9 @@
         Title="NewPlay" Height="480" Width="854" Loaded="onLoad">
     <Grid HorizontalAlignment="Left" Height="480" Width="854" Margin="0,0,0,0" VerticalAlignment="Top">
         <Rectangle Fill="#FF35BDB2" HorizontalAlignment="Left" Height="450" Margin="0,0,0,0" VerticalAlignment="Top" Width="846"/>
-        <Label Name="LogoLabel" Content="Old Game New Play" HorizontalAlignment="Left" VerticalAlignment="Top" Height="79" Width="505" Foreground="White" FontSize="48" Margin="-10,-12,0,0">
-            <Label.Triggers>
-                <EventTrigger RoutedEvent="Label.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="LogoLabel" Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.5" />
-                            <ThicknessAnimation Storyboard.TargetName="LogoLabel" Storyboard.TargetProperty="Margin" From="-20,0,0,0" To="20,0,0,0" Duration="0:0:0.5" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Label.Triggers>
-        </Label>
+        <Label Name="LogoLabel" Content="Old Game New Play" HorizontalAlignment="Left" VerticalAlignment="Top" Height="79" Width="505" Foreground="White" FontSize="48" Margin="20,0,0,0"/>
         <Grid HorizontalAlignment="Left" Height="400" Margin="20,0,0,50" VerticalAlignment="Bottom" Width="400">
-            <Image Name="camera" Source="pack://application:,,/img/KinectRequired.png" Margin="10,0,-10,0"/>
+            <Image Name="camera" Source="pack://application:,,/img/KinectRequired.png" Margin="10,10,-10,-10"/>
             <Canvas Name="canvas"/>
         </Grid>
         <Grid Margin="0,10,10,30" HorizontalAlignment="Right" Width="349">
