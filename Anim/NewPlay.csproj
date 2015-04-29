@@ -37,6 +37,7 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Kinect, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -114,6 +115,22 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="left-hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="KinectRequired.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LightBuzz.Vitruvius.WPF\LightBuzz.Vitruvius.WPF.csproj">
+      <Project>{8bae0b01-2dd9-44ad-824e-5fe63c0f64d0}</Project>
+      <Name>LightBuzz.Vitruvius.WPF</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LightBuzz.Vitruvius\LightBuzz.Vitruvius.csproj">
+      <Project>{89e39683-d56d-4604-971b-587c22c62934}</Project>
+      <Name>LightBuzz.Vitruvius</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
