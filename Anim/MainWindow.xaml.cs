@@ -14,6 +14,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Runtime.InteropServices;
+using System.Diagnostics;
+using System.ComponentModel;
 using Microsoft.Kinect;
 using LightBuzz.Vitruvius;
 using LightBuzz.Vitruvius.WPF;
@@ -33,11 +35,6 @@ namespace Anim {
             InitializeComponent();
         }
 
-        private void onTipButtonClick(object sender, MouseButtonEventArgs e) {
-            TipWindow tip = new TipWindow();
-            tip.ShowDialog();
-        }
-
         private void onLoad(object sender, RoutedEventArgs e) {
             sensor = SensorExtensions.Default();
             if (sensor != null) {
@@ -47,9 +44,25 @@ namespace Anim {
                 sensor.SkeletonFrameReady += onSkeletonFrameReady;
                 sensor.Start();
             } else {
-                MessageBox.Show("未发现Kinect，插拔一下试试？", "未发现Kinect", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("未发现Kinect，重连一下试试？", "未发现Kinect", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
+        }
+
+        private void onTipButtonClick(object sender, MouseButtonEventArgs e) {
+            TipWindow tip = new TipWindow();
+            tip.ShowDialog();
+        }
+
+        private void onGoButtonClick(object sender, MouseButtonEventArgs e) {
+            if (!gaming) {
+                try {
+                    Process.Start("FeedingFrenzyTwo.exe");
+                    gaming = true;
+                } catch (Win32Exception) {
+                    MessageBox.Show("未发现游戏主程序，检查一下路径？", "未发现游戏主程序", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
         }
 
         private void onColorFrameReady(object sender, ColorImageFrameReadyEventArgs e) {
