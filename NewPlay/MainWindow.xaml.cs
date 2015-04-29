@@ -20,7 +20,7 @@ using Microsoft.Kinect;
 using LightBuzz.Vitruvius;
 using LightBuzz.Vitruvius.WPF;
 
-namespace Anim {
+namespace NewPlay {
     public partial class MainWindow : Window {
         const int GAME_WIDTH = 800;
         const int GAME_HEIGHT = 600;

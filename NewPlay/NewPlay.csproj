@@ -7,8 +7,8 @@
     <ProjectGuid>{D5BBDCE6-13E2-4555-951D-7CAFDEAF6D17}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Anim</RootNamespace>
-    <AssemblyName>Anim</AssemblyName>
+    <RootNamespace>NewPlay</RootNamespace>
+    <AssemblyName>NewPlay</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -35,6 +35,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>NewPlay.App</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Kinect, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
@@ -102,22 +105,15 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="logo.ico" />
+    <Resource Include="img\go.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="go.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="right-hand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="left-hand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="KinectRequired.png" />
+    <Resource Include="img\KinectRequired.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -131,6 +127,12 @@
       <Project>{89e39683-d56d-4604-971b-587c22c62934}</Project>
       <Name>LightBuzz.Vitruvius</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\hand.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
